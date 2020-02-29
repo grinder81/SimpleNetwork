@@ -6,17 +6,25 @@ import PackageDescription
 let package = Package(
     name: "SimpleNetwork",
     platforms: [
-        .macOS(.v10_15), .iOS(.v13), .watchOS(.v3)
-     ],
-    products: [
-        .library(name: "SimpleNetwork", targets: ["SimpleNetwork"]),
+        .iOS(.v13),
+        .macOS(.v10_15),
+        .tvOS(.v13),
+        .watchOS(.v6)
     ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+    products: [
+        .library(
+            name: "SimpleNetwork",
+            targets: ["SimpleNetwork"]),
     ],
     targets: [
-        .target(name: "SimpleNetwork",  dependencies: []),
-        .testTarget(name: "SimpleNetworkTests", dependencies: ["SimpleNetwork"]),
+        .target(
+            name: "SimpleNetwork",
+            dependencies: []),
+        .testTarget(
+            name: "SimpleNetworkTests",
+            dependencies: ["SimpleNetwork"]),
+    ],
+    swiftLanguageVersions: [
+        .version("5.1")
     ]
 )
